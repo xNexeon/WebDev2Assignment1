@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <title>Nikodem Wisniewski</title>
+  <style>
+         body {
+         background-color:lightblue;
+         color:navy;
+         }
+
+         ul {
+            list-style-type:none;
+         }
+
+         li {
+            padding:.3em;
+         }
+  </style>
+</head>
+<body>
+  <h1>Nikodem Wisniewski</h1>
+  <a href="semester2/semester2.html">Click here for semester 2 work</a>
+  <h2>HTML Labs (Semester 1)</h2>
+  <ul>
+    <li>
+      <a href="week01/Lab01/index.html">Week One - Lab 01 (First HTML page)</a>
+    </li>
+    <li>
+      <a href="week01/Lab02/index.html">Week One - Lab 02 (Formatting text)</a>
+    </li>
+    <li>
+      <a href="week01/Lab03/index.html">Week One - Lab 03 (Layout elements)</a>
+    </li>
+    <li>
+      <a href="week01/Lab04/index.html">Week One - Lab 04 (Images)</a>
+    </li><br>
+    <li>
+      <a href="week02/lab01/index.html">Week Two - Lab 01 (Links Exercise One)</a>
+    </li>
+    <li>
+      <a href="week02/lab02/cv.html">Week Two - Lab 02 (Links Exercise Two)</a>
+    </li><br>
+    <li>
+      <a href="week03/lab01/index.html">Week Three - Lab 01 (CSS Exersice One)</a>
+    </li>
+    <li>
+      <a href="week03/lab02/index.html">Week Three - Lab 02 (CSS Exersice Two)</a>
+    </li>
+    <li>
+      <a href="week03/lab03/cv.html">Week Three - Lab 03 (CSS Exersice Three)</a>
+    </li><br>
+    <h2>CSS Excersices:</h2>
+    <li>
+      <a href="week04/lab01/exercise1.html">Week Four - Lab 1 Ex.1 (CSS classes)</a>
+    </li>
+    <li>
+      <a href="week04/lab01/exercise2.html">Week Four - Lab 1 Ex.2 (CSS IDs)</a>
+    </li>
+    <li>
+      <a href="week04/lab02/index.html">Week Four - Lab 2 (CSS Combinators)</a>
+    </li>
+    <li>
+      <a href="week04/lab03/index.html">Week Four - Lab 3 (Adding list)</a>
+    </li><br>
+    <h2>HTML Tables and Images</h2>
+    <li>
+      <a href="week05/lab01/index.html">Week Five - Lab 01 (Creating Tables)</a>
+    </li>
+    <li>
+      <a href="week05/lab02/index.html">Week Five - Lab 02 (Styling Tables)</a>
+    </li>
+    <li>
+      <a href="week05/lab03/index.html">Week Five - Lab 03 (Background Images)</a>
+    </li>
+    <li>
+      <a href="week05/lab04/index.html">Week Five - Lab 04 (Figures and Captions)</a>
+    </li>
+    <h2>Semantic layout and Positioning</h2>
+    <li>
+      <a href="week07/lab01/box1.html">Week Seven - Lab 01 (The Box Model)</a>
+    </li>
+    <li>
+      <a href="week07/lab02/index.html">Week Seven - Lab 02 (Semantic Layout 1)</a>
+    </li>
+    <li>
+      <a href="week07/lab03/index.html">Week Seven - Lab 03 (Semantic Layout 2)</a>
+    </li>
+    <h2>Assignments:</h2>
+    <li>
+      <a href="/assignments/assignment1/index.html">Week Six - Assignment 01</a>
+    </li>
+    <li>
+      <a href="/assignments/assigmentFlex/index.html">Week Nine - Assignment 02 (Flex)</a>
+    </li>
+    <li>
+      <a href="/assignments/assignment2/index.html">End of Semester 1 - Assignment 02 (Semantic)</a>
+    </li>
+    <h2>Flexbox</h2>
+    <li>
+      <a href="week08/lab01/exercise1.html">Week Eight - Flexbox 1</a>
+    </li>
+    <li>
+      <a href="week08/lab01/exercise2.html">Week Eight - Flexbox 1</a>
+    </li>
+        <li>
+      <a href="week08/lab02/index.html">Week Eight - Flex Items 1</a>
+    </li>
+    <li>
+      <a href="week08/lab03/index.html">Week Eight - Flexbox 2</a>
+    </li>
+    <h2>Forms:</h2>
+    <li>
+      <a href="week09/lab01/car.html">Week Nine - Forms</a>
+    </li>
+    <h2>Semantic UI 1:</h2>
+    <li>
+      <a href="week10/lab01/index.html">Week Ten - Semantic UI Grid 1</a>
+    </li>
+    <li>
+      <a href="week10/lab02/index.html">Week Ten - Semantic UI Grid 2</a>
+    </li>
+    <li>
+      <a href="week10/lab03/index.html">Week Ten - Semantic UI Elements</a>
+    </li>
+    <h2>Semantic UI 2:</h2>
+    <li>
+      <a href="week11/lab01/index.html">Week Eleven - Semantic UI Menu</a>
+    </li>
+    <li>
+      <a href="week11/lab02/index.html">Week Eleven - Semantic UI Tables</a>
+    </li>
+    <li>
+      <a href="week11/lab03/index.html">Week Eleven - Semantic UI Cards</a>
+    </li>
+    
+  </ul>
+</body>
+</html>
