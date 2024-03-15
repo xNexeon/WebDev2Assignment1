@@ -1,92 +1,72 @@
-// TO DO
-// -Assign buttons in secondary container to show selected content container
-// -Footer/footbar
-// -Add as you go
+"use strict";
 
+// Declare variables using let or const
 let buttonAlreadyPressed = 0;
 let selection = 0;
-let oldselection = 0;
-currentContentContainer = 0;
-let semester1Container, semester2Container, assignmentContainer;
+let oldSelection = 0;
+let currentContentContainer = 0;
+// Get the current date
+let currentDate = new Date();
 
+// Get the current hour
+let currentHour = currentDate.getHours();
+
+// Use const for elements that won't be reassigned
+const semester1Container = null; // Assuming these are initialized later
+const semester2Container = null;
+const assignmentContainer = null;
 
 // Execute when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
     const centralContainer = document.querySelector(".central-container");
     centralContainer.classList.add("fadeInAnimation");
-    buttonAlreadyPressed = 0;
-   
+    buttonAlreadyPressed = 0; // Reset buttonAlreadyPressed
+    document.getElementById('currentTime').innerText = 'Current hour: ' + currentHour;
 });
 
 // Button click handler for Semester 1
-function semester1Btn() {
+const semester1Btn = () => {
     handleButtonClick(1);
     buttonAlreadyPressed = 1;
-    oldselection = 1;
+    oldSelection = 1;
 }
 
 // Button click handler for Semester 2
-function semester2Btn() {
+const semester2Btn = () => {
     handleButtonClick(2);
     buttonAlreadyPressed = 1;
-    oldselection = 2;
+    oldSelection = 2;
 }
 
 // Button click handler for Assignments
-function assignmentBtn() {
+const assignmentBtn = () => {
     handleButtonClick(3);
     buttonAlreadyPressed = 1;
-    oldselection = 3;
+    oldSelection = 3;
 }
-
-// Handle secondarycontainer buttos
-function semester1Btn2() {
-    handleSecondaryButtonClick(1);
-}
-
-function semester2Btn2() {
-    handleSecondaryButtonClick(2);
-}
-
-function assignmentBtn2() {
-    handleSecondaryButtonClick(3);
-}
-
-
 
 // Common function to handle button clicks
-function handleButtonClick(selectedOption) {
-    
-
+const handleButtonClick = (selectedOption) => {
     if (buttonAlreadyPressed === 0) {
         selection = selectedOption;
-        changeWebPage();    
-    } 
+        changeWebPage();
+    }
 }
 
-
-
-
-function handleSecondaryButtonClick(selection) {
-    switchToSelectedContainer(selection)
-}
-
-function switchToSelectedContainer(selection) {
+// Handle secondary container buttons
+const nextBtn = () => {
     const contentContainers = document.querySelectorAll(".content-container");
-    const semester1Container = document.querySelector("#con1");
-    const semester2Container = document.querySelector("#con2");
-    const assignmentContainer = document.querySelector("#con3");
+    showNextContainer(contentContainers);
 }
 
-
-
-
-
-
-
+// Handle secondary container buttons
+const previousBtn = () => {
+    const contentContainers = document.querySelectorAll(".content-container");
+    showPreviousContainer(contentContainers);
+}
 
 // Function to change the web page based on the selected option
-function changeWebPage() {
+const changeWebPage = () => {
     const backgroundBox = document.querySelector(".background-box");
     const centralContainer = document.querySelector(".central-container");
     const secondaryContainer = document.querySelector(".secondary-container");
@@ -105,20 +85,20 @@ function changeWebPage() {
                 currentContentContainer = selection;
                 showContentContainer(currentContentContainer, contentContainerArray);
             } else {
-                console.log("Error with selection [invalid selection]");
+                console.error("Error with selection [invalid selection]");
             }
         });
     }
 }
 
 // Function to show the secondary container with animation
-function showSecondaryContainer(secondaryContainer) {
+const showSecondaryContainer = (secondaryContainer) => {
     secondaryContainer.classList.add("show");
     secondaryContainer.classList.add("slideFromRightAnimation");
 }
 
 // Function to show the selected content container with animation
-function showContentContainer(selection, contentContainers) {
+const showContentContainer = (selection, contentContainers) => {
     const currentContentContainerIndex = selection - 1;
 
     if (contentContainers[currentContentContainerIndex]) {
@@ -126,6 +106,48 @@ function showContentContainer(selection, contentContainers) {
         currentContentContainer.classList.add("show");
         currentContentContainer.classList.add("slideFromLeftAnimation");
     } else {
-        console.log("Error: Content container not found for selection ", selection);
+        console.error("Error: Content container not found for selection ", selection);
     }
+}
+
+// Function to show the next content container with animation
+const showNextContainer = (contentContainers) => {
+    const currentContainer = contentContainers[currentContentContainer - 1];
+    hideContainer(currentContainer);
+
+    currentContentContainer++;
+    if (currentContentContainer > contentContainers.length) {
+        currentContentContainer = 1;
+    }
+
+    const nextContainer = contentContainers[currentContentContainer - 1];
+    showContainer(nextContainer, "slideFromLeftAnimation");
+}
+
+// Function to show the previous content container with animation
+const showPreviousContainer = (contentContainers) => {
+    const currentContainer = contentContainers[currentContentContainer - 1];
+    hideContainer(currentContainer);
+
+    currentContentContainer--;
+    if (currentContentContainer < 1) {
+        currentContentContainer = contentContainers.length;
+    }
+
+    const prevContainer = contentContainers[currentContentContainer - 1];
+    showContainer(prevContainer, "slideFromRightAnimation");
+}
+
+// Function to hide the container
+const hideContainer = (container) => {
+    container.classList.remove("show");
+    container.classList.remove("slideFromLeftAnimation");
+    container.classList.add("hide");
+}
+
+// Function to show the container with animation
+const showContainer = (container, animationClass) => {
+    container.classList.remove("hide");
+    container.classList.add("show");
+    container.classList.add(animationClass);
 }

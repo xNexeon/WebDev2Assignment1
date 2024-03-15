@@ -62,7 +62,9 @@
     display: flex;
     padding-bottom: 2%;
 }
-
+#currentTime {
+    color: white;
+}
 .header {
     align-items:center; 
     height: 35%;
