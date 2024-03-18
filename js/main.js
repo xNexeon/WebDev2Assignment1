@@ -1,6 +1,6 @@
 "use strict";
 
-// Declare variables using let or const
+// Declare variables
 let buttonAlreadyPressed = 0;
 let selection = 0;
 let oldSelection = 0;
@@ -21,7 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const centralContainer = document.querySelector(".central-container");
     centralContainer.classList.add("fadeInAnimation");
     buttonAlreadyPressed = 0; // Reset buttonAlreadyPressed
-    document.getElementById('currentTime').innerText = 'Current hour: ' + currentHour;
+    
+
+    document.getElementById('footertop').addEventListener('mouseover', function() {
+        const belowfooter = document.querySelector(".belowfooter");
+        belowfooter.classList.add("show");
+    });
+    
+    document.getElementById('footertop').addEventListener('mouseout', function() {
+        const belowfooter = document.querySelector(".belowfooter");
+        belowfooter.classList.remove("show");
+    });
 });
 
 // Button click handler for Semester 1
@@ -49,6 +59,8 @@ const assignmentBtn = () => {
 const handleButtonClick = (selectedOption) => {
     if (buttonAlreadyPressed === 0) {
         selection = selectedOption;
+        const belowfooter = document.querySelector(".footermain");
+        belowfooter.classList.add("hide")
         changeWebPage();
     }
 }
@@ -63,6 +75,11 @@ const nextBtn = () => {
 const previousBtn = () => {
     const contentContainers = document.querySelectorAll(".content-container");
     showPreviousContainer(contentContainers);
+}
+
+const secretBtn = () => {
+    const secretBtn = document.querySelector("#secretInput")
+    console.error(secretBtn);
 }
 
 // Function to change the web page based on the selected option
@@ -89,6 +106,10 @@ const changeWebPage = () => {
             }
         });
     }
+}
+
+const homeBtn = () => {
+    window.location.href = "";
 }
 
 // Function to show the secondary container with animation
